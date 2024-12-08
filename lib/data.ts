@@ -1,15 +1,22 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 
-export const links = [
+type Link = {
+  name: string;
+  hash: string;
+  hidden?: boolean; // Optional property
+};
+
+export const links : Link[] = [
   {
     name: "Home",
     hash: "#home",
   },
-  // {
-  //   name: "Projects",
-  //   hash: "#projects",
-  // },
+  {
+    name: "Projects",
+    hash: "#projects",
+    hidden: true,
+  },
   {
     name: "Experience",
     hash: "#experience",
@@ -26,7 +33,7 @@ export const links = [
     name: "Contact",
     hash: "#contact",
   },
-] as const;
+];
 
 export const experiencesData = [
   {

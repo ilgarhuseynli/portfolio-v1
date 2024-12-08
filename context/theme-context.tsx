@@ -17,7 +17,15 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export default function ThemeContextProvider({children,}: ThemeContextProviderProps) {
 
-  const [theme, setTheme] = useState<Theme>(window.localStorage.getItem("theme") as Theme | 'dark');
+  const [theme, setTheme] = useState<Theme>("dark"); // Default to 'dark'
+
+  useEffect(() => {
+    // Ensure this runs only in the browser
+    const storedTheme = window.localStorage.getItem("theme") as Theme;
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
 
   const toggleTheme = () => setTheme(theme === "light" ? 'dark' : 'light');
 
