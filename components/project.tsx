@@ -99,6 +99,8 @@ export default function Project({
         <Image
           src={imageUrl}
           alt="Project I worked on"
+          width="192"
+          height="192"
           quality={95}
           className="absolute hidden lg:block top-[60px] -right-10 w-[28.25rem] rounded-t-lg shadow-2xl scale-[1.0]
           transition
