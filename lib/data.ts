@@ -7,7 +7,7 @@ type Link = {
   hidden?: boolean; // Optional property
 };
 
-export const links : Link[] = [
+export const links = [
   {
     name: "Home",
     hash: "#home",
@@ -33,7 +33,7 @@ export const links : Link[] = [
     name: "Contact",
     hash: "#contact",
   },
-];
+] as Link[];
 
 export const experiencesData = [
   {
@@ -58,7 +58,7 @@ export const experiencesData = [
     description:
         "Developed and maintained a variety of websites, including news platforms, car sales portals, and business websites.",
     icon: React.createElement(CgWorkAlt),
-    date: "January 2019 - February 2020",
+    date: "June 2019 - February 2020",
   },
   {
     title: "Back End Web Developer",
@@ -66,7 +66,7 @@ export const experiencesData = [
     description:
         "Played a key role in developing an ERP system, contributing to its architecture and functionality. Focused on the design and implementation of a robust Call Center module to enhance customer engagement and operational efficiency.",
     icon: React.createElement(CgWorkAlt),
-    date: "January 2019 - September 2019",
+    date: "January 2019 - June 2019",
   },
 ] as const;
 
@@ -123,6 +123,10 @@ export const skillsData = [
     icon: "logos:react",
   },
   {
+    name: "NextJs",
+    icon: "logos:nextjs-icon",
+  },
+  {
     name: "TypeScript",
     icon: "logos:typescript-icon",
   },
@@ -158,8 +162,39 @@ export const skillsData = [
     name: "AWS",
     icon: "logos:aws",
   },
+] as const;
+
+export const educationData = [
   {
-    name: "Jenkins",
-    icon: "devicon:jenkins",
+    title: "Programming",
+    description: "Digital Academy",
+    items: [
+      "FullStack Web Developer",
+    ],
+    graduatedDate: "2019",
+    imageUrl: "",
+    urlLink: "https://test.com",
+  },
+  {
+    title: "Programming",
+    description: "Orient ITM",
+    items: [
+      "C# && .NET Framework",
+      "MS SQL",
+    ],
+    graduatedDate: "2016",
+    imageUrl: "",
+    urlLink: "https://test.com",
+  },
+  {
+    title: "Bachelor",
+    description: "Azerbaijan state oil and industry university",
+    items: [
+      "Faculty: (ITMF) Information Technology",
+      "Specialty: Computer Engineering",
+    ],
+    graduatedDate: "2017",
+    imageUrl: "",
+    urlLink: "https://test.com",
   },
 ] as const;
