@@ -6,9 +6,12 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   return (
     <header className="z-[999] relative">
@@ -33,18 +36,26 @@ export default function Header() {
                 className={clsx(
                   "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-300 dark:hover:text-gray-300",
                   {
-                    "text-gray-950 dark:text-white": activeSection === link.name,
+                    "text-gray-950 dark:text-white": 
+                      (link.type === "hash" && isHomePage && activeSection === link.name) ||
+                      (link.type === "page" && pathname.startsWith(link.hash)),
                   }
                 )}
-                href={link.hash}
+                href={isHomePage || link.type === "page" ? link.hash : "/"}
                 onClick={() => {
-                  setActiveSection(link.name);
-                  setTimeOfLastClick(Date.now());
+                  if (link.type === "hash" && !isHomePage) {
+                    // Store the section to scroll to after navigation
+                    sessionStorage.setItem("scrollToSection", link.name);
+                  } else if (link.type === "hash" && isHomePage) {
+                    setActiveSection(link.name);
+                    setTimeOfLastClick(Date.now());
+                  }
                 }}
               >
                 {link.name}
 
-                {link.name === activeSection && (
+                {((link.type === "hash" && isHomePage && activeSection === link.name) ||
+                  (link.type === "page" && pathname.startsWith(link.hash))) && (
                   <motion.span
                     className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
                     layoutId="activeSection"

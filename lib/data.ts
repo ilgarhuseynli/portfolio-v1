@@ -4,34 +4,46 @@ import { CgWorkAlt } from "react-icons/cg";
 type Link = {
   name: string;
   hash: string;
-  hidden?: boolean; // Optional property
+  type?: "hash" | "page";
+  hidden?: boolean;
 };
 
 export const links = [
   {
     name: "Home",
     hash: "#home",
+    type: "hash",
+  },
+  {
+    name: "Blog",
+    hash: "/blog",
+    type: "page",
   },
   {
     name: "Projects",
     hash: "#projects",
+    type: "hash",
     hidden: true,
   },
   {
     name: "Experience",
     hash: "#experience",
+    type: "hash",
   },
   {
     name: "Skills",
     hash: "#skills",
+    type: "hash",
   },
   {
     name: "Education",
     hash: "#education",
+    type: "hash",
   },
   {
     name: "Contact",
     hash: "#contact",
+    type: "hash",
   },
 ] as Link[];
 
@@ -196,5 +208,38 @@ export const educationData = [
     graduatedDate: "2017",
     imageUrl: "",
     urlLink: "https://test.com",
+  },
+] as const;
+
+export const blogData = [
+  {
+    title: "Getting Started with Next.js 14",
+    shortDescription: "Learn the basics of Next.js 14 and its new features including Server Components and App Router.",
+    description: "Next.js 14 brings revolutionary changes to the React framework with Server Components, App Router, and improved performance optimizations. In this comprehensive guide, we'll explore these new features and how they can enhance your web development workflow.",
+    imageUrl: "/images/blog/nextjs.jpg",
+    date: "2024-03-15",
+    author: "Ilgar Huseynli",
+    category: "Web Development",
+    slug: "getting-started-with-nextjs-14"
+  },
+  {
+    title: "The Power of TypeScript in Modern Web Development",
+    shortDescription: "Discover how TypeScript can improve your JavaScript development experience with static typing.",
+    description: "TypeScript has become an essential tool in modern web development. This article explores how TypeScript's static typing system can help catch errors early, improve code maintainability, and enhance the development experience.",
+    imageUrl: "/images/blog/typescript.png",
+    date: "2024-03-10",
+    author: "Ilgar Huseynli",
+    category: "Programming",
+    slug: "power-of-typescript"
+  },
+  {
+    title: "Building Responsive UIs with Tailwind CSS",
+    shortDescription: "Learn how to create beautiful, responsive user interfaces using Tailwind CSS utility classes.",
+    description: "Tailwind CSS has revolutionized the way we style web applications. In this post, we'll dive deep into how to leverage Tailwind's utility-first approach to build responsive and maintainable user interfaces.",
+    imageUrl: "/images/blog/tailwind.jpeg",
+    date: "2024-03-05",
+    author: "Ilgar Huseynli",
+    category: "CSS",
+    slug: "building-with-tailwind-css"
   },
 ] as const;
