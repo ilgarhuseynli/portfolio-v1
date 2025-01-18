@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Blog() {
   return (
-    <section id="blog" className="scroll-mt-28 mb-28">
+    <section id="blog" className="scroll-mt-28 mb-28 xl:w-[80%]">
       <SectionHeading>Latest Blog Posts</SectionHeading>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {blogData.map((blog) => (

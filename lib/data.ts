@@ -13,12 +13,7 @@ export const links = [
     name: "Home",
     hash: "#home",
     type: "hash",
-  },
-  {
-    name: "Blog",
-    hash: "/blog",
-    type: "page",
-  },
+  }, 
   {
     name: "Projects",
     hash: "#projects",
@@ -39,6 +34,11 @@ export const links = [
     name: "Education",
     hash: "#education",
     type: "hash",
+  },
+  {
+    name: "Blog",
+    hash: "/blog",
+    type: "page",
   },
   {
     name: "Contact",

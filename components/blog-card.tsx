@@ -27,14 +27,16 @@ export default function BlogCard({ blog }: BlogCardProps) {
             <span>•</span>
             <span>{blog.category}</span>
           </div>
-          <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-300">
-            {blog.title}
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
-            {blog.shortDescription}
-          </p>
-          <div className="mt-4 flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <span>By {blog.author}</span>
+          <div className="h-40 flex flex-col text-left">
+            <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-300">
+                  {blog.title}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
+                  {blog.shortDescription}
+            </p>
+            <div className="mt-auto flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                  <span>By {blog.author}</span>
+            </div>
           </div>
         </div>
       </article>
