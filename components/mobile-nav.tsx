@@ -27,9 +27,8 @@ export default function MobileNav() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
-  console.log(activeSection);
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white bg-opacity-80 backdrop-blur-[0.5rem] border-t border-black/10 dark:bg-gray-950 dark:border-white/10">
+    <nav className="fixed bottom-0 mt-20 left-0 right-0 z-50 md:hidden bg-white bg-opacity-80 backdrop-blur-[0.5rem] border-t border-black/10 dark:bg-gray-950 dark:border-white/10">
       <ul className="flex justify-around items-center h-16">
         {links
           .filter((link) => !link?.hidden)
