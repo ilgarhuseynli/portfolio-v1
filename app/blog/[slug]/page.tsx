@@ -29,7 +29,7 @@ export default function BlogPost({ params: { slug } }: Props) {
           />
         </div>
         
-        <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-8">
+        <div className="flex items-center gap-2 sm:gap-4 text-sm sm:text-md text-gray-600 dark:text-gray-300 mb-8">
           <time dateTime={post.date}>
             {format(new Date(post.date), "MMMM d, yyyy")}
           </time>

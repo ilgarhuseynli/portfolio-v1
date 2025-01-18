@@ -10,7 +10,7 @@ type BlogCardProps = {
 export default function BlogCard({ blog }: BlogCardProps) {
   return (
     <Link href={`/blog/${blog.slug}`} className="group">
-      <article className="bg-gray-100 dark:bg-white/10 rounded-lg overflow-hidden hover:scale-[1.02] transition">
+      <article className="bg-gray-100 dark:bg-slate-800 rounded-lg overflow-hidden hover:scale-[1.02] transition">
         <div className="relative h-48 w-full">
           <Image
             src={blog.imageUrl}
@@ -31,7 +31,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
             <h3 className="text-xl font-semibold mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-300">
                   {blog.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
+            <p className="text-gray-600 dark:text-gray-300 line-clamp-2">
                   {blog.shortDescription}
             </p>
             <div className="mt-auto flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
