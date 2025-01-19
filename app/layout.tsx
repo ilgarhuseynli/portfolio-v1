@@ -8,6 +8,7 @@ import "./globals.css";
 import React from "react";
 import {Metadata} from "next";
 import MobileNav from "@/components/mobile-nav";
+import { AuthProvider } from "@/context/auth-context";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -63,11 +64,13 @@ export default function RootLayout({children} : {children: React.ReactNode}) {
 
           <ThemeContextProvider>
               <ActiveSectionContextProvider>
-                  <Header />
-                  {children}
-                  <MobileNav />
-                  <Toaster position="top-right" />
-                  <ThemeSwitch />
+                  <AuthProvider>
+                      <Header />
+                      {children}
+                      <MobileNav />
+                      <Toaster position="top-right" />
+                      <ThemeSwitch />
+                  </AuthProvider>
               </ActiveSectionContextProvider>
           </ThemeContextProvider>
       </body>
