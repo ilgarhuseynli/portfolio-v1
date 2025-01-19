@@ -7,6 +7,7 @@ import {
   User,
   Settings,
   LogOut,
+  FileText,
 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/context/auth-context";
@@ -16,6 +17,11 @@ const menuItems = [
     title: "Overview",
     href: "/dashboard",
     icon: LayoutDashboard,
+  },
+  {
+    title: "Blogs",
+    href: "/dashboard/blogs",
+    icon: FileText,
   },
   {
     title: "Profile",
