@@ -41,19 +41,19 @@ export default function EditBlogPage({ params }: { params: { id: string } }) {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="text-foreground">Loading...</div>;
   }
 
   if (!blog) {
-    return <div>Blog not found</div>;
+    return <div className="text-foreground">Blog not found</div>;
   }
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Edit Blog</h1>
+        <h1 className="text-2xl font-bold text-foreground">Edit Blog</h1>
       </div>
-      <div className="border rounded-lg p-4">
+      <div className="border rounded-lg p-6 bg-card">
         <BlogForm
           initialData={blog}
           onSubmit={handleSubmit}

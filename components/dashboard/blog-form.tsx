@@ -86,9 +86,13 @@ export function BlogForm({ initialData, onSubmit, isEditing = false }: BlogFormP
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Title</FormLabel>
+              <FormLabel className="text-foreground">Title</FormLabel>
               <FormControl>
-                <Input {...field} onChange={handleTitleChange} />
+                <Input 
+                  {...field} 
+                  onChange={handleTitleChange}
+                  className="bg-background text-foreground"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,9 +104,13 @@ export function BlogForm({ initialData, onSubmit, isEditing = false }: BlogFormP
           name="slug"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Slug</FormLabel>
+              <FormLabel className="text-foreground">Slug</FormLabel>
               <FormControl>
-                <Input {...field} readOnly={!isEditing} />
+                <Input 
+                  {...field} 
+                  readOnly={!isEditing}
+                  className="bg-background text-foreground"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -114,9 +122,12 @@ export function BlogForm({ initialData, onSubmit, isEditing = false }: BlogFormP
           name="shortDescription"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Short Description</FormLabel>
+              <FormLabel className="text-foreground">Short Description</FormLabel>
               <FormControl>
-                <Textarea {...field} />
+                <Textarea 
+                  {...field}
+                  className="bg-background text-foreground min-h-[100px]"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -128,7 +139,7 @@ export function BlogForm({ initialData, onSubmit, isEditing = false }: BlogFormP
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Content</FormLabel>
+              <FormLabel className="text-foreground">Content</FormLabel>
               <FormControl>
                 <Editor 
                   value={field.value}
@@ -145,9 +156,13 @@ export function BlogForm({ initialData, onSubmit, isEditing = false }: BlogFormP
           name="imageUrl"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Image URL</FormLabel>
+              <FormLabel className="text-foreground">Image URL</FormLabel>
               <FormControl>
-                <Input {...field} type="url" />
+                <Input 
+                  {...field} 
+                  type="url"
+                  className="bg-background text-foreground"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -159,16 +174,23 @@ export function BlogForm({ initialData, onSubmit, isEditing = false }: BlogFormP
           name="category"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Category</FormLabel>
+              <FormLabel className="text-foreground">Category</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input 
+                  {...field}
+                  className="bg-background text-foreground"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <Button type="submit" disabled={loading}>
+        <Button 
+          type="submit" 
+          disabled={loading}
+          className="w-full"
+        >
           {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isEditing ? "Update" : "Create"} Blog
         </Button>
